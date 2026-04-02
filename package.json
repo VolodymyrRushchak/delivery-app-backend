@@ -1,0 +1,24 @@
+{
+  "name": "eliftech-school-test-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/VolodymyrRushchak/eliftech-school-test-assignment#readme",
+  "bugs": {
+    "url": "https://github.com/VolodymyrRushchak/eliftech-school-test-assignment/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VolodymyrRushchak/eliftech-school-test-assignment.git"
+  },
+  "license": "ISC",
+  "author": "rushvolod@gmail.com",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node --env-file=.env src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
