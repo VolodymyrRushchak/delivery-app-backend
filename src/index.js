@@ -1,14 +1,12 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const shopsRouter = require('./api/shops');
+const productsRouter = require('./api/products');
+require('./database');
 
 const app = express();
-mongoose.connect(process.env.MONGODB_URL).
-    then(() => console.log('Connected to MongoDB')).
-    catch((error) => console.log('Failed to connect to MongoDB: ', error));
 
-app.get('/', (req, res) => {
-    res.json({ message: 'It works!' });
-});
+app.use('/shops', shopsRouter);
+app.use('/products', productsRouter);
 
 const port = process.env.PORT;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
