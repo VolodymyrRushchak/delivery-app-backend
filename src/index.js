@@ -9,6 +9,7 @@ const app = express();
 
 app.use(cors({ origin: process.env.FRONTEND_URL }));
 app.use(express.json());
+app.use(express.urlencoded());
 
 app.use('/shops', shopsRouter);
 app.use('/products', productsRouter);

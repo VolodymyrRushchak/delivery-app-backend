@@ -31,8 +31,16 @@ shopsRouter.get('/:id', async (req, res) => {
 
 shopsRouter.get('/:id/products', async (req, res) => {
     const { id } = req.params;
+    const { categories, sort } = req.query;
     try {
-        const products = await Product.find({ shop: id });
+        const filter = { shop: id };
+        if (typeof categories === "string" || (Array.isArray(categories) && categories.length))
+            filter.category = { $in: categories };
+        let query = Product.find(filter);
+        if (sort === 'by-price-asc') query.sort({ price: 1 });
+        else if (sort === 'by-price-desc') query.sort({ price: -1 });
+        else if (sort === 'by-name') query.sort({ name: 1 });
+        const products = await query.exec();
         res.status(200).json(products);
     } catch (error) {
         if (error instanceof mongoose.Error.CastError && error.path === 'shop')
