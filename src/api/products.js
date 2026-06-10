@@ -6,7 +6,7 @@ const productsRouter = express.Router();
 
 productsRouter.get('', async (req, res) => {
     try {
-        const products = await Product.find();
+        const products = await Product.find().lean();
         res.status(200).json(products);
     } catch (error) {
         handleServerError(error, res);
