@@ -1,14 +1,14 @@
 {
-  "name": "eliftech-school-test-assignment",
+  "name": "delivery-app-backend",
   "version": "1.0.0",
-  "description": "",
-  "homepage": "https://github.com/VolodymyrRushchak/eliftech-school-test-assignment#readme",
+  "description": "The backend for the delivery app.",
+  "homepage": "https://github.com/VolodymyrRushchak/delivery-app-backend#readme",
   "bugs": {
-    "url": "https://github.com/VolodymyrRushchak/eliftech-school-test-assignment/issues"
+    "url": "https://github.com/VolodymyrRushchak/delivery-app-backend/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VolodymyrRushchak/eliftech-school-test-assignment.git"
+    "url": "git+https://github.com/VolodymyrRushchak/delivery-app-backend.git"
   },
   "license": "ISC",
   "author": "rushvolod@gmail.com",
