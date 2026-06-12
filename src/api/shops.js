@@ -2,7 +2,7 @@ const express = require('express');
 const Shop = require('../schemas/shop');
 const mongoose = require('mongoose');
 const Product = require('../schemas/product');
-const { handleServerError, sendMessage } = require('./utils');
+const { handleServerError, handleCastError, sendMessage } = require('./utils');
 
 const shopsRouter = express.Router();
 
@@ -71,7 +71,7 @@ shopsRouter.get('/:id/product-count', async (req, res) => {
 });
 
 function handleShopError(error, res) {
-   if (handleCastError(error, res)) return;
+    if (handleCastError(error, res)) return;
     handleServerError(error, res);
 }
 
